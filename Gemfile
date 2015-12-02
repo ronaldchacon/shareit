@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'uuidtools'
+gem 'figaro'
 
 group :development, :test do
   gem 'better_errors'
