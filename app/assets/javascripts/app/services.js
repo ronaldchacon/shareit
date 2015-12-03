@@ -1,4 +1,4 @@
-angular.module("myApp.services", [])
+angular.module("myApp.services", ["ngResource"])
 .factory("ArticleService", function($http, $q) {
   var service = {
     getLatestFeed: function() {
@@ -15,8 +15,11 @@ angular.module("myApp.services", [])
   return service;
 })
 .factory("Share", function($resource) {
-  var Share = $resource("/api/shares/:id.json", {id: "@id"}, {});
-  return Share;
+  var service = $resource("/api/shares/:id.json",
+    {id: "@id"},
+    {}
+  );
+  return service;
 })
 .factory("SessionService", function($http, $q) {
   var service = {
