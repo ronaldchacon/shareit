@@ -1,0 +1,16 @@
+<div>
+  <ul>
+    <li ng-repeat="article in articles | orderBy:pubDate:false">
+      <div class="article-listing row">
+        <div class="col-md-12">
+          <h2>
+            <a href="{{ article.link }}" title="{{ article.title }}"> {{ article.title }}</a>
+          </h2>
+          <p>
+            {{ article.pubDate | date: "M/d/yy h:mm:ss a" }}
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
